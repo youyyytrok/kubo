@@ -1,24 +1,14 @@
-name: Spell Check
+name: check-spelling
 
-on:
-  push:
-    branches:
-      - ci-typos
-  pull_request:
+on: [push, pull_request]
 
 jobs:
-  spellcheck:
+  check-spelling:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install Codespell
-        run: pip install codespell
-
-      - name: Run Codespell
-        run: |
-          codespell \
-            --ignore-words=.codespell-ignore \
-            --skip="*.min.js,*.json,*.lock,*.bin,*.svg,*.data,*.pdf,*.sum,*.mod"
+      - uses: actions/checkout@v2
+      - uses: codespell-project/actions-codespell@master
+        with:
+          skip: ./.git,./layouts,./themes,./static,./bin
+# uncomment this to make warning only - not failing the checks
+#          only_warn: 1
