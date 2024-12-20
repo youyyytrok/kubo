@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: codespell-project/actions-codespell@master
         with:
-          skip: ./.git,./layouts,./themes,./static,./bin,*.mod,*.sum,*.pdf,./test/sharness/t0280-plugin-dag-jose-data
+          skip: ./.git,./layouts,./themes,./static,./bin,./test/sharness/t0280-plugin-dag-jose-data,*.mod,*.sum,*.pdf,*.data
           files: "*.md"
 # uncomment this to make warning only - not failing the checks
 #          only_warn: 1
