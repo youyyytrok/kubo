@@ -10,6 +10,6 @@ jobs:
       - uses: codespell-project/actions-codespell@master
         with:
           skip: ./.git,./layouts,./themes,./static,./bin,./test/sharness/t0280-plugin-dag-jose-data,./docs/AUTHORS,*.mod,*.sum,*.pdf,*.data
-          ignore-words-list: .spell_ignore
+          ignore_words_file: .spell_ignore
 # uncomment this to make warning only - not failing the checks
 #          only_warn: 1
