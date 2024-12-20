@@ -10,5 +10,6 @@ jobs:
       - uses: codespell-project/actions-codespell@master
         with:
           skip: ./.git,./layouts,./themes,./static,./bin
+          files: "*.md"
 # uncomment this to make warning only - not failing the checks
 #          only_warn: 1
